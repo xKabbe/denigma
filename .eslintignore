@@ -1,0 +1,4 @@
+# Tells ESLint to ignore specific files and directories.
+# Learn more: https://eslint.org/docs/user-guide/configuring/ignoring-code
+node_modules/
+out/
