@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Project-DeNigmA-blue" height="130">
+  <img src="public/denigma_logo.png">
 </p>
 
 `DeNigmA` is made up of the two words `Enigma` (message encryption) and `DNA` (deoxyribonucleic acid) and is a hobby project for the visualisation of DNA and RNA sequences. The basic idea is adapted from [seqviz](https://github.com/Lattice-Automation/seqviz) and is to be structured similarly, but further modified and enhanced.
