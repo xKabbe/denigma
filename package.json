@@ -26,9 +26,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.1",
+    "react-pro-sidebar": "^0.7.1",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "seqviz": "^3.7.2",
+    "storybook-addon-react-router-v6": "^0.2.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -67,9 +69,6 @@
     "stylelint-config-standard-scss": "^6.1.0",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0"
-  },
-  "overrides": {
-    "@svgr/webpack": "$@svgr/webpack"
   },
   "scripts": {
     "build": "env-cmd --no-override -f ./.env-override/.env.production react-scripts build",
