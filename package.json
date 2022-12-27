@@ -27,7 +27,6 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.1",
     "react-router-dom": "^6.6.1",
-    "react-scripts": "5.0.1",
     "seqviz": "^3.7.2",
     "web-vitals": "^2.1.4"
   },
@@ -61,6 +60,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.8",
     "prop-types": "^15.8.1",
+    "react-scripts": "5.0.1",
     "sass": "^1.57.1",
     "stylelint": "^14.16.0",
     "stylelint-config-standard-scss": "^6.1.0",
