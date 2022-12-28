@@ -2,6 +2,21 @@
   <img src="public/denigma_logo.png">
 </p>
 
+<p align="center">
+  <a href='https://github.dev/xKabbe/denigma/blob/master' alt="Open in VSCode">
+    <img src="https://img.shields.io/badge/Open%20in%20Visual%20Studio%20Code-blue?logo=visualstudiocode&logoColor=blue&labelColor=555" />
+  </a>
+  <a href='https://github.com/xKabbe/denigma/actions?query=workflow%3A"Test+React+Application"++' alt="GitHub Workflow Status (with branch)">
+    <img src="https://img.shields.io/github/actions/workflow/status/xKabbe/denigma/test_react_application.yml?label=jest%20test&logo=github" />
+  </a>
+  <a href='https://github.com/xKabbe/denigma/issues?q=is%3Aissue+is%3Aopen' alt="GitHub issues">
+    <img src="https://img.shields.io/github/issues/xKabbe/denigma?color=blue&logo=github" />
+  </a>
+  <a href='https://github.com/xKabbe/denigma/issues?q=is%3Aissue+is%3Aclosed' alt="GitHub closed issues">
+    <img src="https://img.shields.io/github/issues-closed/xKabbe/denigma?color=success&logo=github" />
+  </a>
+</p>
+
 `DeNigmA` is made up of the two words `Enigma` (message encryption) and `DNA` (deoxyribonucleic acid) and is a hobby project for the visualisation of DNA and RNA sequences. The basic idea is adapted from [seqviz](https://github.com/Lattice-Automation/seqviz) and is to be structured similarly, but further modified and enhanced.
 
 ## Running & Debugging the application
@@ -34,7 +49,9 @@ More commands regarding testing, debugging and running the application are:
 
 ## Creator
 
-**Steven Karbjinsky** https://github.com/xKabbe
+[Steven Karbjinsky](https://github.com/xKabbe)
+
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=xKabbe)
 
 ## Copyright and License
 
