@@ -27,6 +27,7 @@ sketch
 
 # testing
 /coverage
+.coveralls.yml
 
 # production
 /build
