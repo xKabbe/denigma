@@ -77,7 +77,6 @@
     "build:l": "env-cmd --no-override -f ./.env-override/.env.local react-scripts build",
     "build:q": "env-cmd --no-override -f ./.env-override/.env.qa react-scripts build",
     "build:s": "env-cmd --no-override -f ./.env-override/.env.staging react-scripts build",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "eject": "react-scripts eject",
     "init": "npm ci --loglevel=error --no-audit --no-fund",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
@@ -93,7 +92,8 @@
     "slint:f": "./node_modules/.bin/stylelint --fix \"src/**/*.{css,scss}\"",
     "start": "set PORT=3000 env-cmd --no-override -f ./.env-override/.env.local && react-scripts start",
     "start-https": "set PORT=3001 HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem env-cmd --no-override -f ./.env-override/.env.local && react-scripts start",
-    "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false"
+    "test": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false",
+    "test:coveralls": "env-cmd --no-override -f ./.env-override/.env.test react-scripts test --env=jsdom --coverage --coverageDirectory='./out/coverage' --watchAll=false && coveralls < ./out/coverage/lcov.info"
   },
   "jest": {
     "collectCoverageFrom": [
