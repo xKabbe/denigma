@@ -17,14 +17,12 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Dependencies 🪜
         run: npm install
-      - name: Show env variabales
-        run: echo ${{ secrets.COVERALLS_REPO_TOKEN }} and ${{ vars.COVERALLS_REPO_TOKEN }}
       - name: Run Jest Tests 🪜
         run: npm run test:coveralls
       - name: Coveralls 🪜
         uses: coverallsapp/github-action@master
         env:
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          COVERALLS_REPO_TOKEN: ${{ vars.COVERALLS_REPO_TOKEN }}
           COVERALLS_GIT_BRANCH: ${{ github.ref }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
