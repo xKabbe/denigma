@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies 🪜
         run: npm install
       - name: Run Jest Tests 🪜
-        run: npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+        run: npm test
       - name: Coveralls GitHub Action 🪜
         uses: coverallsapp/github-action@v1.1.2
         with:
