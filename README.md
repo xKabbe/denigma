@@ -6,8 +6,11 @@
   <a href='https://github.dev/xKabbe/denigma/blob/master' alt="Open in VSCode">
     <img src="https://img.shields.io/badge/Open%20in%20Visual%20Studio%20Code-blue?logo=visualstudiocode&logoColor=blue&labelColor=555" />
   </a>
-  <a href='https://github.com/xKabbe/denigma/actions?query=workflow%3A"Test+React+Application"++' alt="GitHub Workflow Status (with branch)">
-    <img src="https://img.shields.io/github/actions/workflow/status/xKabbe/denigma/test_react_application.yml?label=jest%20test&logo=github" />
+  <a href='https://github.com/xKabbe/denigma/actions/workflows/test_react_application.yml' alt="Test React Application">
+    <img src="https://github.com/xKabbe/denigma/actions/workflows/test_react_application.yml/badge.svg" />
+  </a>
+  <a href='https://coveralls.io/github/xKabbe/denigma?branch=master' alt="Coverage Status">
+    <img src="https://coveralls.io/repos/github/xKabbe/denigma/badge.svg?branch=master" />
   </a>
   <a href='https://github.com/xKabbe/denigma/issues?q=is%3Aissue+is%3Aopen' alt="GitHub issues">
     <img src="https://img.shields.io/github/issues/xKabbe/denigma?color=blue&logo=github" />
