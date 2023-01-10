@@ -18,8 +18,4 @@ jobs:
       - name: Install Dependencies 🪜
         run: npm install
       - name: Run Jest Tests 🪜
-        run: npm test
-      - name: Coveralls GitHub Action 🪜
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ github.token }}
+        run: npm test:coveralls
