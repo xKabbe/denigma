@@ -2,7 +2,7 @@ name: Test React Application
 run-name: ${{ github.actor }} is testing 🧪 the React Application 💻
 
 # Controls when the action will run.
-on: [push]
+on: [push, pull_request]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,4 +18,4 @@ jobs:
       - name: Install Dependencies 🪜
         run: npm install
       - name: Run Jest Tests 🪜
-        run: npm test
+        run: npm test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
