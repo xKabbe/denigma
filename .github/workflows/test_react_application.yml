@@ -19,10 +19,8 @@ jobs:
         run: npm ci
       - name: Run Jest Tests 🪜
         run: npm test
-      - name: Coveralls 🪜
+      - name: Post Coverage to Coveralls 🪜
         uses: coverallsapp/github-action@master
-        env:
-          COVERALLS_REPO_TOKEN: ${{ vars.COVERALLS_REPO_TOKEN }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./out/coverage/lcov.info
