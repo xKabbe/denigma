@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies 🪜
         run: npm install
       - name: Echo Variables
-        run: echo ${{ vars.COVERALLS_REPO_TOKEN }} and ${{ github.ref }} and ${{ secrets.GITHUB_TOKEN }}
+        run: echo ${{ vars.COVERALLS_REPO_TOKEN }} and ${{ github.ref }} and ${{ secrets.COVERALLS_GITHUB_TOKEN }}
       - name: Run Jest Tests 🪜
         run: npm run test:coveralls
       - name: Coveralls 🪜
@@ -27,4 +27,4 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ vars.COVERALLS_REPO_TOKEN }}
           COVERALLS_GIT_BRANCH: ${{ github.ref }}
         with:
-          github-token: ${{ vars.COVERALLS_REPO_TOKEN }}
+          github-token: ${{ secrets.COVERALLS_GITHUB_TOKEN }}
