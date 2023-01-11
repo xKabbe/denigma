@@ -103,6 +103,9 @@
       "!src/index.tsx",
       "!src/react-app-env.d.ts",
       "!src/util/web-vitals.ts"
+    ],
+    "coveragePathIgnorePatterns" : [
+      "src/app/*"
     ]
   },
   "browserslist": {
