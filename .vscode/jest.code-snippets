@@ -1,0 +1,57 @@
+{
+	// Place your denigma workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+  "Create Jest Test": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "jest-test",
+    "body": [
+      "// External imports",
+      "import { render, screen } from '@testing-library/react';",
+      "import { BrowserRouter } from 'react-router-dom';",
+      "",
+      "// Local imports",
+      "import $TM_FILENAME_BASE from './$TM_FILENAME_BASE';",
+      "",
+      "describe('${1:Description}', () => {",
+      "  test('it should render $TM_FILENAME_BASE', () => {",
+      "    render(<$TM_FILENAME_BASE />, { wrapper: BrowserRouter });",
+      "  });",
+      "});"
+    ],
+    "description": "Create Jest Test"
+  },
+  "Create Jest Describe Block": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "jest-describe-block",
+    "body": [
+      "describe('${1:Description}', () => {",
+      "",
+      "});"
+    ],
+    "description": "Create Jest Describe Block"
+  },
+  "Create Jest Test Step": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "jest-test-step",
+    "body": [
+      "test('it should ${1:TestDescription}', () => {",
+      "",
+      "});"
+    ],
+    "description": "Create Jest Test Step"
+  },
+  "Create Jest Test Step (Async)": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "jest-test-step-async",
+    "body": [
+      "test('it should ${1:TestDescription}', async () => {",
+      "",
+      "});"
+    ],
+    "description": "Create Jest Test Step (Async)"
+  }
+}
