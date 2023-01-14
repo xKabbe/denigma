@@ -1,0 +1,104 @@
+{
+	// Place your denigma workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+  "Import React": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-import",
+    "body": [
+      "// External imports",
+      "import React from 'react';"
+    ],
+    "description": "Import React"
+  },
+  "Create useState Hook Variable": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-useState-hook-variable",
+    "body": [
+      "const [${1:variable}, set${1/(.*)/${1:/capitalize}/}] = useState();"
+    ],
+    "description": "Create useState Hook Variable"
+  },
+  "Create useEffect Hook": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-useEffect-hook",
+    "body": [
+      "useEffect(() => {",
+      "",
+      "}, []);"
+    ],
+    "description": "Create useEffect Hook"
+  },
+  "Create Interface": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-interface",
+    "body": [
+      "interface ${1:Example}Props {",
+      "  example?: string;",
+      "}"
+    ],
+    "description": "Create Interface"
+  },
+  "Create Default Props": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-defaultProps",
+    "body": [
+      "// Default props",
+      "${1:Example}.defaultProps = {",
+      "  example: 'DefaultValue'",
+      "};"
+    ],
+    "description": "Create Default Props"
+  },
+  "Create React Component": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-component",
+    "body": [
+      "// External imports",
+      "import React from 'react';",
+      "",
+      "// Local imports",
+      "",
+      "interface ${1:ComponentName}Props {",
+      "  example?: string;",
+      "}",
+      "",
+      "function ${1:ComponentName}({ example }: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div>",
+      "      <h1>${1:ComponentName} is working!</h1>",
+      "    </div>",
+      "  );",
+      "}",
+      "// Default props",
+      "${1:ComponentName}.defaultProps = { example: 'DefaultValue' };",
+      "",
+      "export default ${1:ComponentName};",
+      ""
+    ],
+    "description": "Create React Component"
+  },
+  "Create Arrow Function": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-arrow-function",
+    "body": [
+      "const ${1:FunctionName} = () => {",
+      "  ",
+      "};"
+    ],
+    "description": "Create Arrow Function"
+  },
+  "Create Function": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "react-function",
+    "body": [
+      "function ${1:FunctionName}() {",
+      "  ",
+      "}"
+    ],
+    "description": "Create Function"
+  }
+}
