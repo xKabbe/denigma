@@ -1,0 +1,74 @@
+{
+	// Place your denigma workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+  "Create Link Reference": {
+    "scope": "markdown",
+    "prefix": "md-link",
+    "body": [
+      "[${1:text}](${2:link})"
+    ],
+    "description": "Create Link Reference"
+  },
+  "Create Image Reference": {
+    "scope": "markdown",
+    "prefix": "md-image",
+    "body": [
+      "![${1:alt text}](${2:path})"
+    ],
+    "description": "Create Image Reference"
+  },
+  "Create Table (2x1)": {
+    "scope": "markdown",
+    "prefix": "md-table-2x1",
+    "body": [
+      "| ${1:column 1} | ${2:column 2} |",
+      "| --- | --- |",
+      "| ... | ... |"
+    ],
+    "description": "Create Table (2x1)"
+  },
+  "Create Table (3x1)": {
+    "scope": "markdown",
+    "prefix": "md-table-3x1",
+    "body": [
+      "| ${1:column 1} | ${2:column 2} | ${3:column 3} |",
+      "| --- | --- | --- |",
+      "| ... | ... | ... |"
+    ],
+    "description": "Create Table (3x1)"
+  },
+  "Create Table (4x1)": {
+    "scope": "markdown",
+    "prefix": "md-table-4x1",
+    "body": [
+      "| ${1:column 1} | ${2:column 2} | ${3:column 3} | ${4:column 4} |",
+      "| --- | --- | --- | --- |",
+      "| ... | ... | ... | ... |"
+    ],
+    "description": "Create Table (4x1)"
+  },
+  "Create Table (5x1)": {
+    "scope": "markdown",
+    "prefix": "md-table-5x1",
+    "body": [
+      "| ${1:column 1} | ${2:column 2} | ${3:column 3} | ${4:column 4} | ${5:column 5} |",
+      "| --- | --- | --- | --- | --- |",
+      "| ... | ... | ... | ... | ... |"
+    ],
+    "description": "Create Table (5x1)"
+  },
+  "Create Code Reference": {
+    "scope": "markdown",
+    "prefix": "md-code-reference",
+    "body": [
+      "```${1:language}",
+      "",
+      "```"
+    ],
+    "description": "Create Code Reference"
+  },
+}
