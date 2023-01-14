@@ -104,7 +104,7 @@
       "!src/react-app-env.d.ts",
       "!src/util/web-vitals.ts"
     ],
-    "coveragePathIgnorePatterns" : [
+    "coveragePathIgnorePatterns": [
       "src/app/*"
     ]
   },
