@@ -5,12 +5,44 @@
 	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
 	// Placeholders with the same ids are connected.
-  // "Create Link Reference": {
-  //   "scope": "markdown",
-  //   "prefix": "md-link",
-  //   "body": [
-  //     "[$1]($2)",
-  //   ],
-  //   "description": "Create Link Reference"
-  // }
+  "Create Selenium Test Step": {
+    "scope": "ruby",
+    "prefix": "selenium-test-step",
+    "body": [
+      "test_step(step_title = '...', step_instruction = '...', step_observation = '...') do",
+      "",
+      "end"
+    ],
+    "description": "Create Selenium Test Step"
+  },
+  "Create Selenium Define": {
+    "scope": "ruby",
+    "prefix": "selenium-define",
+    "body": [
+      "define do",
+      "",
+      "end"
+    ],
+    "description": "Create Selenium Define"
+  },
+  "Create Selenium Setup": {
+    "scope": "ruby",
+    "prefix": "selenium-setup",
+    "body": [
+      "setup do",
+      "",
+      "end"
+    ],
+    "description": "Create Selenium Setup"
+  },
+  "Create Selenium Teardown": {
+    "scope": "ruby",
+    "prefix": "selenium-teardown",
+    "body": [
+      "teardown do",
+      "",
+      "end"
+    ],
+    "description": "Create Selenium Teardown"
+  }
 }
