@@ -14,11 +14,11 @@
       "import { BrowserRouter } from 'react-router-dom';",
       "",
       "// Local imports",
-      "import $TM_FILENAME_BASE from './$TM_FILENAME_BASE';",
+      "import ${TM_FILENAME_BASE/(.*?)\\..*/$1/} from './${TM_FILENAME_BASE/(.*?)\\..*/$1/}';",
       "",
       "describe('${1:Description}', () => {",
-      "  test('it should render $TM_FILENAME_BASE', () => {",
-      "    render(<$TM_FILENAME_BASE />, { wrapper: BrowserRouter });",
+      "  test('should render ${TM_FILENAME_BASE/(.*?)\\..*/$1/}', () => {",
+      "    render(<${TM_FILENAME_BASE/(.*?)\\..*/$1/} />, { wrapper: BrowserRouter });",
       "  });",
       "});"
     ],
@@ -38,7 +38,7 @@
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "jest-test-step",
     "body": [
-      "test('it should ${1:TestDescription}', () => {",
+      "test('should ${1:TestDescription}', () => {",
       "",
       "});"
     ],
@@ -48,7 +48,7 @@
     "scope": "javascript, javascriptreact, typescript, typescriptreact",
     "prefix": "jest-test-step-async",
     "body": [
-      "test('it should ${1:TestDescription}', async () => {",
+      "test('should ${1:TestDescription}', async () => {",
       "",
       "});"
     ],
