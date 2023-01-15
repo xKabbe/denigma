@@ -61,14 +61,14 @@
     ],
     "description": "Create Table (5x1)"
   },
-  "Create Code Reference": {
+  "Create Code Block": {
     "scope": "markdown",
-    "prefix": "md-code-reference",
+    "prefix": "md-code",
     "body": [
       "```${1:language}",
       "",
       "```"
     ],
-    "description": "Create Code Reference"
+    "description": "Create Code Block"
   },
 }
