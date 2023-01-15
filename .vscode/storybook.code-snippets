@@ -1,0 +1,68 @@
+{
+	// Place your denigma workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+  "Create Story": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "storybook-story",
+    "body": [
+      "// External imports",
+      "import { ComponentMeta } from '@storybook/react';",
+      "",
+      "// Local imports",
+      "import ${TM_FILENAME_BASE/(.*?)\\..*/$1/} from './${TM_FILENAME_BASE/(.*?)\\..*/$1/}';",
+      "",
+      "// Story placement in the story list",
+      "export default {",
+      "  title: '${TM_DIRECTORY/.*src[\\/\\\\](([^\\/\\\\]*)([\\/\\\\])?)|([\\/\\\\])([^\\/\\\\]*)/$2${3:+/}${5:+.}$5/g}',",
+      "  component: ${TM_FILENAME_BASE/(.*?)\\..*/$1/},",
+      "} as ComponentMeta<typeof ${TM_FILENAME_BASE/(.*?)\\..*/$1/}>;",
+      "",
+      "export const Default = () => <${TM_FILENAME_BASE/(.*?)\\..*/$1/} />;"
+    ],
+    "description": "Create Story"
+  },
+  "Create Story With Router": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "storybook-story-with-router",
+    "body": [
+      "// External imports",
+      "import { ComponentMeta } from '@storybook/react';",
+      "import { withRouter } from 'storybook-addon-react-router-v6';",
+      "",
+      "// Local imports",
+      "import ${TM_FILENAME_BASE/(.*?)\\..*/$1/} from './${TM_FILENAME_BASE/(.*?)\\..*/$1/}';",
+      "",
+      "// Story placement in the story list",
+      "export default {",
+      "  title: '${TM_DIRECTORY/.*src[\\/\\\\](([^\\/\\\\]*)([\\/\\\\])?)|([\\/\\\\])([^\\/\\\\]*)/$2${3:+/}${5:+.}$5/g}',",
+      "  component: ${TM_FILENAME_BASE/(.*?)\\..*/$1/},",
+      "  decorators: [withRouter],",
+      "} as ComponentMeta<typeof ${TM_FILENAME_BASE/(.*?)\\..*/$1/}>;",
+      "",
+      "export const Default = () => <${TM_FILENAME_BASE/(.*?)\\..*/$1/} />;"
+    ],
+    "description": "Create Story With Router"
+  },
+  "Create Template": {
+    "scope": "javascript, javascriptreact, typescript, typescriptreact",
+    "prefix": "storybook-template",
+    "body": [
+      "const Template: ComponentStory<typeof ${TM_FILENAME_BASE/(.*?)\\..*/$1/}> = (args) => <${TM_FILENAME_BASE/(.*?)\\..*/$1/} {...args} />;",
+      "",
+      "export const Example1 = Template.bind({});",
+      "Example1.args = {",
+      "  title: '...',",
+      "};",
+      "",
+      "export const Example2 = Template.bind({});",
+      "Example2.args = {",
+      "  title: '...',",
+      "};"
+    ],
+    "description": "Create Template"
+  }
+}
