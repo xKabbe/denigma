@@ -7,7 +7,7 @@ import { StrictMode } from 'react';
 import App from './app/App';
 import initI18n from './lang';
 import reportWebVitals from './util/web-vitals';
-import './styles/main.scss';
+import './index.css';
 
 // Global initialization
 initI18n();
