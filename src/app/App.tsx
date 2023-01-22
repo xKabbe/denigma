@@ -12,7 +12,7 @@ import { ColorContext, themeSettings } from '../themes/theme';
 
 // Component definition
 function App() {
-  const [mode, setMode] = useState<PaletteMode>('light');
+  const [mode, setMode] = useState<PaletteMode>('dark');
 
   const colorMode = useMemo(
     () => ({
