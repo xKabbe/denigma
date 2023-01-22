@@ -1,19 +1,34 @@
 // External imports
 import React, { useState } from 'react';
-import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import { Box, IconButton, Paper, Typography, useTheme } from '@mui/material';
-import { MenuOutlined as MenuOutlinedIcon } from '@mui/icons-material';
+import { ProSidebar, Menu } from 'react-pro-sidebar';
+import { Box, Divider, useTheme } from '@mui/material';
 import 'react-pro-sidebar/dist/css/styles.css';
 
 // Local imports
-import SideBarTitle from './components/SideBarTitle/SideBarTitle';
-import logo from '../../assets/icons/denigma_icon.png';
 import { tokens } from '../../themes/theme';
+import SideBarHeader from './components/SideBarHeader/SideBarHeader';
+import ViewSettings from './components/Settings/ViewSettings/ViewSettings';
+import SequenceSettings from './components/Settings/SequenceSettings/SequenceSettings';
+import EnzymeSettings from './components/Settings/EnzymeSettings/EnzymeSettings';
 
 function SideBar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+  const [complementIsChecked, setComplementIsChecked] = useState<boolean>(true);
+  const [indexIsChecked, setIndexIsChecked] = useState<boolean>(true);
+  const [enzymeIsSelected, setEnzymeIsSelected] = useState<Array<string>>([
+    'PSTI',
+    'ECORI',
+    'XBAI',
+    'SPEI',
+    'ECORV',
+    'BAMHI',
+    'HINDIII',
+    'HAEIII',
+    'NDEI',
+    'SACI',
+  ]);
 
   return (
     <Box
@@ -27,85 +42,30 @@ function SideBar() {
     >
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape='square'>
-          <MenuItem
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-            style={{
-              margin: '10px 0 20px 0',
-              color: colors.grey[100],
-            }}
-          >
-            {!isCollapsed && (
-              <Box display='flex' justifyContent='space-between' alignItems='center' ml='15px'>
-                <img src={logo} alt='denigma_logo' width='70px' height='70px' />
-                <Typography variant='h4' fontWeight={700} color='#4bc9a2'>
-                  DeNigmA
-                </Typography>
-                <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                  <MenuOutlinedIcon />
-                </IconButton>
-              </Box>
-            )}
-          </MenuItem>
+          <SideBarHeader isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
 
           {!isCollapsed && (
             <Box
               paddingLeft={isCollapsed ? undefined : '5%'}
               paddingRight={isCollapsed ? undefined : '5%'}
             >
-              <SideBarTitle title='Views' />
-              <Box margin={2}>
-                <Paper
-                  sx={{
-                    borderRadius: 5,
-                    paddingTop: 2,
-                    paddingBottom: 2,
-                    display: 'flex',
-                    alignItems: 'center',
-                    alignContent: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#4bc9a2',
-                  }}
-                >
-                  <Typography>Test</Typography>
-                </Paper>
-              </Box>
+              <ViewSettings />
 
-              <SideBarTitle title='Sequence Settings' />
-              <Box margin={2}>
-                <Paper
-                  sx={{
-                    borderRadius: 5,
-                    paddingTop: 2,
-                    paddingBottom: 2,
-                    display: 'flex',
-                    alignItems: 'center',
-                    alignContent: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#4bc9a2',
-                  }}
-                >
-                  <Typography>Test</Typography>
-                </Paper>
-              </Box>
+              <Divider />
 
-              <SideBarTitle title='General Settings' />
-              <Box margin={2}>
-                <Paper
-                  sx={{
-                    borderRadius: 5,
-                    paddingTop: 2,
-                    paddingBottom: 2,
-                    display: 'flex',
-                    alignItems: 'center',
-                    alignContent: 'center',
-                    justifyContent: 'center',
-                    backgroundColor: '#4bc9a2',
-                  }}
-                >
-                  <Typography>Test</Typography>
-                </Paper>
-              </Box>
+              <SequenceSettings
+                complementIsChecked={complementIsChecked}
+                setComplementIsChecked={setComplementIsChecked}
+                indexIsChecked={indexIsChecked}
+                setIndexIsChecked={setIndexIsChecked}
+              />
+
+              <Divider />
+
+              <EnzymeSettings
+                enzymeIsSelected={enzymeIsSelected}
+                setEnzymeIsSelected={setEnzymeIsSelected}
+              />
             </Box>
           )}
         </Menu>
