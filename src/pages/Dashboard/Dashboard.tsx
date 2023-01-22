@@ -1,17 +1,23 @@
 // External imports
-import React from 'react';
-import { SeqViz } from 'seqviz';
+import React, { useState } from 'react';
+import { Box } from '@mui/material';
 
 // Local imports
+import ViewTab from './ViewTab/ViewTab';
+import SequenceVisualizer from './SequenceVisualizer/SequenceVisualizer';
+import FloatingActionDial from './FloatingActionDial/FloatingActionDial';
+
+type ViewModes = 'both' | 'circular' | 'linear' | 'both_flip' | undefined;
 
 function Dashboard() {
+  const [selectedView, setSelectedView] = useState<ViewModes>('both');
+
   return (
-    <SeqViz
-      name='J23100'
-      seq='TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC'
-      annotations={[{ name: 'promoter', start: 0, end: 34, direction: 1, color: 'blue' }]}
-      style={{ height: '90%', width: '100%' }}
-    />
+    <Box style={{ height: '90%', width: '100%' }}>
+      <ViewTab selectedView={selectedView} setSelectedView={setSelectedView} />
+      <SequenceVisualizer selectedView={selectedView} />
+      <FloatingActionDial />
+    </Box>
   );
 }
 
