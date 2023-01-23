@@ -35,11 +35,30 @@
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "jsx-a11y/alt-text": "off",
     "jsx-quotes": ["error", "prefer-single"],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "tabWidth": 2,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
     "no-duplicate-imports": "error",
     "no-empty": "off",
     "no-plusplus": "off",
     "no-shadow": "off",
-    "object-curly-newline": ["error", { "multiline": true }],
+    // "object-curly-newline": [
+    //   "error",
+    //   {
+    //     // "ObjectExpression": "always",
+    //     "ObjectPattern": { "multiline": true, "minProperties": 2 },
+    //     "ImportDeclaration": "never",
+    //     "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+    //   }
+    // ],
     "quotes": ["error", "single"],
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
