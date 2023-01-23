@@ -20,7 +20,8 @@
       "  test('should render ${TM_FILENAME_BASE/(.*?)\\..*/$1/}', () => {",
       "    render(<${TM_FILENAME_BASE/(.*?)\\..*/$1/} />, { wrapper: BrowserRouter });",
       "  });",
-      "});"
+      "});",
+      ""
     ],
     "description": "Create Jest Test"
   },
