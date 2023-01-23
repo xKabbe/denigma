@@ -31,7 +31,6 @@ function SequenceSettings({
       <SideBarTitle title='Sequence Settings' />
       <Box margin={2}>
         <FormControlLabel
-          checked
           control={
             <Switch
               onChange={(event) => handleComplementCheck(event)}
