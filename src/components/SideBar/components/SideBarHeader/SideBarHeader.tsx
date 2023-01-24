@@ -21,10 +21,7 @@ function SideBarHeader({ isCollapsed, setIsCollapsed }: SideBarHeaderProps) {
     <MenuItem
       onClick={() => setIsCollapsed(!isCollapsed)}
       icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-      style={{
-        margin: '10px 0 20px 0',
-        color: colors.grey[100],
-      }}
+      style={{ margin: '10px 0 20px 0', color: colors.grey[100] }}
     >
       {!isCollapsed && (
         <Box display='flex' justifyContent='space-between' alignItems='center' ml='15px'>
