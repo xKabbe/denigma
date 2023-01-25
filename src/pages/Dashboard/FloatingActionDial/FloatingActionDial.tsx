@@ -21,7 +21,7 @@ function FloatingActionDial() {
 
   return (
     <SpeedDial
-      ariaLabel='SpeedDial basic example'
+      ariaLabel='floating-action-dial'
       sx={{ position: 'absolute', bottom: 16, right: 16 }}
       icon={<SpeedDialIcon />}
       FabProps={{
