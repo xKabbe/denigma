@@ -22,6 +22,14 @@
 
 `DeNigmA` is made up of the two words `Enigma` (message encryption) and `DNA` (deoxyribonucleic acid) and is a hobby project for the visualisation of DNA and RNA sequences. The basic idea is adapted from [seqviz](https://github.com/Lattice-Automation/seqviz) and is to be structured similarly, but further modified and enhanced.
 
+## Useful Links
+
+### React Jest Testing
+
+- [React & TypeScript (Testing)](https://components.guide/) - React Testing Guid And More
+- [How To Approach A Testcase](https://polvara.me/posts/my-approach-when-it-comes-to-testing) - My Approach When It Comes to Testing ([Polvara Blog](https://polvara.me/))
+- [5 Testing Library Tips](https://polvara.me/posts/five-things-you-didnt-know-about-testing-library) - 5 Things You (Probably) Didn't Know About Testing Library ([Polvara Blog](https://polvara.me/))
+
 ## Running & Debugging the application
 
 1. Clone repo:
