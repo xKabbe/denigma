@@ -105,7 +105,8 @@
       "!src/util/web-vitals.ts"
     ],
     "coveragePathIgnorePatterns": [
-      "src/app/*"
+      "src/app/*",
+      "src/pages/Dashboard/SequenceVisualizer/*"
     ]
   },
   "browserslist": {
