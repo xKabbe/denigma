@@ -33,6 +33,7 @@ function SideBarFooter({ isCollapsed }: SideBarFooterProps) {
     >
       {isCollapsed ? (
         <StyledSidebarFooter
+          data-testid='collapsed-sidebar-footer'
           style={{ width: '40px', height: '40px', borderRadius: '50%', marginTop: '750px' }}
           onClick={() => window.open(codeUrl, '_blank')}
         >
@@ -40,6 +41,7 @@ function SideBarFooter({ isCollapsed }: SideBarFooterProps) {
         </StyledSidebarFooter>
       ) : (
         <StyledSidebarFooter
+          data-testid='expanded-sidebar-footer'
           style={{ width: '50%', padding: '20px', borderRadius: '8px' }}
           onClick={() => window.open(codeUrl, '_blank')}
         >

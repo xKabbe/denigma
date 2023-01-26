@@ -10,6 +10,7 @@ interface GitHubIconProps {
 function GitHubIcon({ size }: GitHubIconProps) {
   return (
     <svg
+      data-testid='github-svg'
       xmlns='http://www.w3.org/2000/svg'
       width={size}
       height={size}
