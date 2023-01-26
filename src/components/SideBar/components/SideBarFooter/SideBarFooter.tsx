@@ -20,7 +20,7 @@ const StyledSidebarFooter = styled.div`
   background: linear-gradient(45deg, #94e2cd 0%, #4cceac 100%);
 `;
 
-const codeUrl = process.env.GITHUB_PROJECT_PATH;
+const codeUrl = 'https://github.com/xKabbe/denigma';
 
 function SideBarFooter({ isCollapsed }: SideBarFooterProps) {
   return (
