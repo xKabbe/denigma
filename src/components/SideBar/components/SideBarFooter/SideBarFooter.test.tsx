@@ -15,10 +15,10 @@ describe('SideBarFooter', () => {
     const githubSvg = getByTestId('github-svg');
     expect(githubSvg).toBeInTheDocument();
 
-    const collapsedSideBar = getByTestId('collapsed-sidebar-footer');
-    expect(collapsedSideBar).toBeInTheDocument();
+    const collapsedSideBarFooter = getByTestId('collapsed-sidebar-footer');
+    expect(collapsedSideBarFooter).toBeInTheDocument();
 
-    userEvent.click(collapsedSideBar);
+    userEvent.click(collapsedSideBarFooter);
     expect(window.open).toHaveBeenCalled();
   });
 
@@ -31,10 +31,10 @@ describe('SideBarFooter', () => {
     const githubSvg = getByTestId('github-svg');
     expect(githubSvg).toBeInTheDocument();
 
-    const expandedSideBar = getByTestId('expanded-sidebar-footer');
-    expect(expandedSideBar).toBeInTheDocument();
+    const expandedSideBarFooter = getByTestId('expanded-sidebar-footer');
+    expect(expandedSideBarFooter).toBeInTheDocument();
 
-    userEvent.click(expandedSideBar);
+    userEvent.click(expandedSideBarFooter);
     expect(window.open).toHaveBeenCalled();
   });
 });
