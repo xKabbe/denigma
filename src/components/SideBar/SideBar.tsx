@@ -18,6 +18,8 @@ function SideBar() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   const [complementIsChecked, setComplementIsChecked] = useState<boolean>(true);
   const [indexIsChecked, setIndexIsChecked] = useState<boolean>(true);
+  // TODO: Enable option to add/remove enzymes by the user -> possibly new UI approach
+  //       for enzyme buttons or there will be a limit of 5 to 10 enzymes
   const [enzymeIsSelected, setEnzymeIsSelected] = useState<Array<string>>([
     'PSTI',
     'ECORI',
@@ -46,10 +48,7 @@ function SideBar() {
           <SideBarHeader isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
 
           {!isCollapsed && (
-            <Box
-              paddingLeft={isCollapsed ? undefined : '5%'}
-              paddingRight={isCollapsed ? undefined : '5%'}
-            >
+            <Box paddingLeft='5%' paddingRight='5%'>
               <ViewSettings />
               <Divider />
               <SequenceSettings
