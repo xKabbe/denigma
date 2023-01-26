@@ -10,6 +10,7 @@ import SideBarHeader from './components/SideBarHeader/SideBarHeader';
 import ViewSettings from './components/Settings/ViewSettings/ViewSettings';
 import SequenceSettings from './components/Settings/SequenceSettings/SequenceSettings';
 import EnzymeSettings from './components/Settings/EnzymeSettings/EnzymeSettings';
+import SideBarFooter from './components/SideBarFooter/SideBarFooter';
 
 function SideBar() {
   const theme = useTheme();
@@ -50,24 +51,22 @@ function SideBar() {
               paddingRight={isCollapsed ? undefined : '5%'}
             >
               <ViewSettings />
-
               <Divider />
-
               <SequenceSettings
                 complementIsChecked={complementIsChecked}
                 setComplementIsChecked={setComplementIsChecked}
                 indexIsChecked={indexIsChecked}
                 setIndexIsChecked={setIndexIsChecked}
               />
-
               <Divider />
-
               <EnzymeSettings
                 enzymeIsSelected={enzymeIsSelected}
                 setEnzymeIsSelected={setEnzymeIsSelected}
               />
             </Box>
           )}
+
+          <SideBarFooter isCollapsed={isCollapsed} />
         </Menu>
       </ProSidebar>
     </Box>
