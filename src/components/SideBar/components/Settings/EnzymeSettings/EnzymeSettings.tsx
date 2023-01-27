@@ -25,14 +25,15 @@ function EnzymeSettings({ enzymeIsSelected, setEnzymeIsSelected }: EnzymeSetting
   ];
 
   function handleEnzymeSelect(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+    let updatedEnzymeSelect;
+
     if (enzymeIsSelected.includes(event.currentTarget.value)) {
-      setEnzymeIsSelected((arr) => arr.filter((enzyme) => enzyme !== event.currentTarget.value));
+      updatedEnzymeSelect = enzymeIsSelected.filter((enzyme) => enzyme !== event.currentTarget.value);
     } else {
-      setEnzymeIsSelected((prevEnzymeIsSelected) => [
-        ...prevEnzymeIsSelected,
-        event.currentTarget.value,
-      ]);
+      updatedEnzymeSelect = [...enzymeIsSelected, event.currentTarget.value];
     }
+
+    setEnzymeIsSelected(updatedEnzymeSelect);
   }
 
   return (
