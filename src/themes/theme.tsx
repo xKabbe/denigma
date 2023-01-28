@@ -38,7 +38,7 @@ export const tokens = (mode: string) => ({
           200: '#b7ebde',
           300: '#94e2cd',
           400: '#70d8bd',
-          500: '#4cceac',
+          500: '#4bc9a2',
           600: '#3da58a',
           700: '#2e7c67',
           800: '#1e5245',

@@ -73,6 +73,7 @@
       "    </div>",
       "  );",
       "}",
+      "",
       "// Default props",
       "${1:ComponentName}.defaultProps = { example: 'DefaultValue' };",
       "",

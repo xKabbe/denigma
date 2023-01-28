@@ -4,6 +4,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "editor.rulers": [80, 100],
   "files.eol": "\n",
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",

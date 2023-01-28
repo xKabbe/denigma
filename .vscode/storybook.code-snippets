@@ -21,7 +21,8 @@
       "  component: ${TM_FILENAME_BASE/(.*?)\\..*/$1/},",
       "} as ComponentMeta<typeof ${TM_FILENAME_BASE/(.*?)\\..*/$1/}>;",
       "",
-      "export const Default = () => <${TM_FILENAME_BASE/(.*?)\\..*/$1/} />;"
+      "export const Default = () => <${TM_FILENAME_BASE/(.*?)\\..*/$1/} />;",
+      ""
     ],
     "description": "Create Story"
   },
@@ -43,7 +44,8 @@
       "  decorators: [withRouter],",
       "} as ComponentMeta<typeof ${TM_FILENAME_BASE/(.*?)\\..*/$1/}>;",
       "",
-      "export const Default = () => <${TM_FILENAME_BASE/(.*?)\\..*/$1/} />;"
+      "export const Default = () => <${TM_FILENAME_BASE/(.*?)\\..*/$1/} />;",
+      ""
     ],
     "description": "Create Story With Router"
   },
@@ -61,7 +63,8 @@
       "export const Example2 = Template.bind({});",
       "Example2.args = {",
       "  title: '...',",
-      "};"
+      "};",
+      ""
     ],
     "description": "Create Template"
   }

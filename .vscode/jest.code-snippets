@@ -16,11 +16,13 @@
       "// Local imports",
       "import ${TM_FILENAME_BASE/(.*?)\\..*/$1/} from './${TM_FILENAME_BASE/(.*?)\\..*/$1/}';",
       "",
-      "describe('${1:Description}', () => {",
+      "describe('${TM_FILENAME_BASE/(.*?)\\..*/$1/}', () => {",
       "  test('should render ${TM_FILENAME_BASE/(.*?)\\..*/$1/}', () => {",
       "    render(<${TM_FILENAME_BASE/(.*?)\\..*/$1/} />, { wrapper: BrowserRouter });",
+      "    expect(1).toEqual(1);",
       "  });",
-      "});"
+      "});",
+      ""
     ],
     "description": "Create Jest Test"
   },
