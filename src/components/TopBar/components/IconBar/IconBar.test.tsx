@@ -19,11 +19,8 @@ describe('IconBar', () => {
     const colorModeButton = screen.getByRole('button', { name: /color-mode-button/i });
     expect(colorModeButton).toBeInTheDocument();
 
-    const notificationButton = screen.getByRole('button', { name: /notification-button/i });
-    expect(notificationButton).toBeInTheDocument();
-
-    const settingsButton = screen.getByRole('button', { name: /settings-button/i });
-    expect(settingsButton).toBeInTheDocument();
+    const languageButton = screen.getByRole('button', { name: /language-selection-button/i });
+    expect(languageButton).toBeInTheDocument();
   });
 
   colorModes.forEach((colorMode) => {
