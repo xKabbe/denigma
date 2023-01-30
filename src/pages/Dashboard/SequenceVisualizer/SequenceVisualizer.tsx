@@ -1,6 +1,6 @@
 // External imports
 import React from 'react';
-import { Box, useTheme } from '@mui/material';
+import { Box, Button, useTheme } from '@mui/material';
 import SeqViz from 'seqviz';
 
 // Local imports
@@ -15,7 +15,13 @@ function SequenceVisualizer({ selectedView }: SequenceVisualizerProps) {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box style={{ height: '90%', width: '100%' }}>
+    <Box
+      style={{
+        height: '90%',
+        width: '100%',
+        marginTop: '25px',
+      }}
+    >
       <SeqViz
         key={`seqviz-${selectedView}-mode`}
         viewer={selectedView}
@@ -26,6 +32,17 @@ function SequenceVisualizer({ selectedView }: SequenceVisualizerProps) {
         ]}
         style={{ height: '90%', width: '100%' }}
       />
+
+      <Box
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <Button variant='contained' color='secondary' sx={{ width: '250px' }}>
+          Generate Example Sequence
+        </Button>
+      </Box>
     </Box>
   );
 }
