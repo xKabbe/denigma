@@ -8,7 +8,6 @@ import SideBar from './SideBar';
 describe('SideBar', () => {
   test('should render SideBar', () => {
     const { getByTestId } = render(<SideBar />, { wrapper: BrowserRouter });
-    screen.logTestingPlaygroundURL();
 
     // SideBar Header
     const menuIcon = screen.getByTestId('MenuOutlinedIcon');

@@ -43,9 +43,9 @@ function EnzymeSettings({ enzymeIsSelected, setEnzymeIsSelected }: EnzymeSetting
       <Box margin={2}>
         <Grid container rowSpacing={2} columnSpacing={2}>
           {enzymeData.map((enzyme) => (
-            <Grid item xs={6} key={`${enzyme} - grid`}>
+            <Grid item xs={6} key={`${enzyme}-grid`}>
               <Button
-                key={`${enzyme} - button`}
+                key={`${enzyme}-button`}
                 value={enzyme}
                 onClick={(event) => handleEnzymeSelect(event)}
                 variant={enzymeIsSelected.includes(enzyme) ? 'contained' : 'outlined'}
