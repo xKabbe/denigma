@@ -1,8 +1,19 @@
 // External imports
 import React from 'react';
-import { ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/material';
+import {
+  ClickAwayListener,
+  Grow,
+  ListItemIcon,
+  ListItemText,
+  MenuList,
+  MenuItem,
+  Paper,
+  Popper,
+  useTheme,
+} from '@mui/material';
 
 // Local imports
+import { tokens } from '../../../../../../themes/theme';
 
 type Languages = 'de' | 'en' | 'es';
 
@@ -36,6 +47,9 @@ function LanguageSelectionMenu({
   setCurrentLanguage,
   languageOptions,
 }: LanguageSelectionMenuProps) {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   const handleChooseLanguage = (language: Languages) => {
     setCurrentLanguage(language);
     setAnchorEl(null);
@@ -46,27 +60,51 @@ function LanguageSelectionMenu({
   };
 
   return (
-    <Menu id='language-menu' anchorEl={anchorEl} open={open} onClose={handleCloseLanguageSelection}>
-      {Object.entries(languageOptions).map(
-        ([languageOption, languageProperties]: [
-          string,
-          {
-            label: string;
-            component: JSX.Element;
-          },
-        ]) => (
-          <MenuItem
-            key={`${languageOption}-item`}
-            disabled={currentLanguage === languageOption}
-            color='red'
-            onClick={() => handleChooseLanguage(languageOption as Languages)}
-          >
-            <ListItemIcon>{languageProperties.component}</ListItemIcon>
-            <ListItemText>{languageProperties.label}</ListItemText>
-          </MenuItem>
-        ),
+    <Popper
+      sx={{
+        zIndex: 1,
+      }}
+      open={open}
+      anchorEl={anchorEl}
+      transition
+      disablePortal
+    >
+      {({ TransitionProps, placement }) => (
+        <Grow
+          {...TransitionProps}
+          style={{
+            transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
+            backgroundColor: colors.primary[400],
+          }}
+        >
+          <Paper>
+            <ClickAwayListener onClickAway={handleCloseLanguageSelection}>
+              <MenuList id='language-menu-list' autoFocusItem>
+                {Object.entries(languageOptions).map(
+                  ([languageOption, languageProperties]: [
+                    string,
+                    {
+                      label: string;
+                      component: JSX.Element;
+                    },
+                  ]) => (
+                    <MenuItem
+                      key={`${languageOption}-item`}
+                      disabled={currentLanguage === languageOption}
+                      sx={{ backgroundColor: colors.primary[400] }}
+                      onClick={() => handleChooseLanguage(languageOption as Languages)}
+                    >
+                      <ListItemIcon>{languageProperties.component}</ListItemIcon>
+                      <ListItemText>{languageProperties.label}</ListItemText>
+                    </MenuItem>
+                  ),
+                )}
+              </MenuList>
+            </ClickAwayListener>
+          </Paper>
+        </Grow>
       )}
-    </Menu>
+    </Popper>
   );
 }
 
