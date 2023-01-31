@@ -1,10 +1,11 @@
 // External imports
-import React from 'react';
-import { Box, Button, useTheme } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, useTheme } from '@mui/material';
 import SeqViz from 'seqviz';
 
 // Local imports
 import { tokens } from '../../../themes/theme';
+import GenerateSequenceButton from './components/GenerateSequenceButton/GenerateSequenceButton';
 
 interface SequenceVisualizerProps {
   selectedView: 'both' | 'circular' | 'linear' | 'both_flip' | undefined;
@@ -13,6 +14,27 @@ interface SequenceVisualizerProps {
 function SequenceVisualizer({ selectedView }: SequenceVisualizerProps) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [randomSeq, setRandomSeq] = useState<string | null>(null);
+
+  function getRandomNumberBetween(min: number, max: number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function getRandomNumber(max: number) {
+    return Math.floor(Math.random() * max);
+  }
+
+  const randomSequenceGenerator = (sequenceLength: { min: number; max: number }) => {
+    const nucleobases = ['A', 'C', 'G', 'T'];
+    const randomSequenceLength = getRandomNumberBetween(sequenceLength.min, sequenceLength.max);
+    let randomSequence = '';
+
+    for (let index = 0; index < randomSequenceLength; index++) {
+      randomSequence += nucleobases[getRandomNumber(4)];
+    }
+
+    setRandomSeq(randomSequence);
+  };
 
   return (
     <Box
@@ -26,23 +48,14 @@ function SequenceVisualizer({ selectedView }: SequenceVisualizerProps) {
         key={`seqviz-${selectedView}-mode`}
         viewer={selectedView}
         name='J23100'
-        seq='TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC'
+        seq={randomSeq === null ? 'TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC' : randomSeq}
         annotations={[
           { name: 'promoter', start: 0, end: 34, direction: 1, color: colors.greenAccent[500] },
         ]}
         style={{ height: '90%', width: '100%' }}
       />
 
-      <Box
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <Button variant='contained' color='secondary' sx={{ width: '250px' }}>
-          Generate Example Sequence
-        </Button>
-      </Box>
+      <GenerateSequenceButton width='250px' randomSequenceGenerator={randomSequenceGenerator} />
     </Box>
   );
 }
