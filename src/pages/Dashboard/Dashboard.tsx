@@ -13,7 +13,7 @@ function Dashboard() {
   const [selectedView, setSelectedView] = useState<ViewModes>('both');
 
   return (
-    <Box style={{ height: '90%', width: '100%' }}>
+    <Box style={{ height: '90%', width: '100%', paddingLeft: '20px', paddingRight: '20px' }}>
       <ViewTab selectedView={selectedView} setSelectedView={setSelectedView} />
       <SequenceVisualizer selectedView={selectedView} />
       <FloatingActionDial />
