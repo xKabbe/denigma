@@ -10,4 +10,4 @@ export default {
   component: TopBar,
 } as ComponentMeta<typeof TopBar>;
 
-export const Default = () => <TopBar />;
+export const Default = () => <TopBar searchSequence='' setSearchSequence={() => {}} />;

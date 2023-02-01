@@ -9,9 +9,10 @@ import GenerateSequenceButton from './components/GenerateSequenceButton/Generate
 
 interface SequenceVisualizerProps {
   selectedView: 'both' | 'circular' | 'linear' | 'both_flip' | undefined;
+  searchSequence: string;
 }
 
-function SequenceVisualizer({ selectedView }: SequenceVisualizerProps) {
+function SequenceVisualizer({ selectedView, searchSequence }: SequenceVisualizerProps) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [randomSeq, setRandomSeq] = useState<string | null>(null);
@@ -47,6 +48,7 @@ function SequenceVisualizer({ selectedView }: SequenceVisualizerProps) {
       <SeqViz
         key={`seqviz-${selectedView}-mode`}
         viewer={selectedView}
+        search={{ query: searchSequence, mismatch: 0 }}
         name='J23100'
         seq={randomSeq === null ? 'TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC' : randomSeq}
         annotations={[

@@ -13,6 +13,7 @@ import { ColorContext, themeSettings } from '../themes/theme';
 // Component definition
 function App() {
   const [mode, setMode] = useState<PaletteMode>('dark');
+  const [searchSequence, setSearchSequence] = useState<string>('');
 
   const colorMode = useMemo(
     () => ({
@@ -32,10 +33,10 @@ function App() {
         <div className='app'>
           <SideBar />
           <main className='content'>
-            <TopBar />
+            <TopBar searchSequence={searchSequence} setSearchSequence={setSearchSequence} />
             <Routes>
-              <Route path='/' element={<Dashboard />} />
-              <Route path='dashboard' element={<Dashboard />} />
+              <Route path='/' element={<Dashboard searchSequence={searchSequence} />} />
+              <Route path='dashboard' element={<Dashboard searchSequence={searchSequence} />} />
             </Routes>
           </main>
         </div>

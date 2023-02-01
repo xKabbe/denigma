@@ -6,10 +6,15 @@ import { Box } from '@mui/material';
 import SearchBar from './components/SearchBar/SearchBar';
 import IconBar from './components/IconBar/IconBar';
 
-function TopBar() {
+interface TopBarProps {
+  searchSequence: string;
+  setSearchSequence: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function TopBar({ searchSequence, setSearchSequence }: TopBarProps) {
   return (
     <Box display='flex' justifyContent='space-between' p={2}>
-      <SearchBar />
+      <SearchBar searchSequence={searchSequence} setSearchSequence={setSearchSequence} />
       <IconBar />
     </Box>
   );

@@ -7,15 +7,19 @@ import ViewTab from './ViewTab/ViewTab';
 import SequenceVisualizer from './SequenceVisualizer/SequenceVisualizer';
 import FloatingActionDial from './FloatingActionDial/FloatingActionDial';
 
+interface DashboardProps {
+  searchSequence: string;
+}
+
 type ViewModes = 'both' | 'circular' | 'linear' | 'both_flip' | undefined;
 
-function Dashboard() {
+function Dashboard({ searchSequence }: DashboardProps) {
   const [selectedView, setSelectedView] = useState<ViewModes>('both');
 
   return (
     <Box style={{ height: '90%', width: '100%', paddingLeft: '20px', paddingRight: '20px' }}>
       <ViewTab selectedView={selectedView} setSelectedView={setSelectedView} />
-      <SequenceVisualizer selectedView={selectedView} />
+      <SequenceVisualizer selectedView={selectedView} searchSequence={searchSequence} />
       <FloatingActionDial />
     </Box>
   );
