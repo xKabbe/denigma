@@ -69,11 +69,11 @@ function LanguageSelectionMenu({
       transition
       disablePortal
     >
-      {({ TransitionProps, placement }) => (
+      {({ TransitionProps }) => (
         <Grow
           {...TransitionProps}
           style={{
-            transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom',
+            transformOrigin: 'center top',
             backgroundColor: colors.primary[400],
           }}
         >
