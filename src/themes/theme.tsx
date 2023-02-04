@@ -66,6 +66,12 @@ export const tokens = (mode: string) => ({
           800: '#2a2d64',
           900: '#151632',
         },
+        nucleotides: {
+          A: 'rgb(143, 222, 140)',
+          C: 'rgb(240, 127, 127)',
+          G: 'rgb(240, 153, 247)',
+          T: 'rgb(247, 198, 114)',
+        },
       }
     : {
         grey: {
@@ -122,6 +128,12 @@ export const tokens = (mode: string) => ({
           700: '#a4a9fc',
           800: '#c3c6fd',
           900: '#e1e2fe',
+        },
+        nucleotides: {
+          A: 'rgb(143, 222, 140)',
+          C: 'rgb(240, 127, 127)',
+          G: 'rgb(107, 129, 255)',
+          T: 'rgb(247, 198, 114)',
         },
       }),
 });
