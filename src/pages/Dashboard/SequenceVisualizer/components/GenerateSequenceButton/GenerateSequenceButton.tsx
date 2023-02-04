@@ -76,7 +76,7 @@ function GenerateSequenceButton({ width, randomSequenceGenerator }: GenerateSequ
           size='small'
           aria-controls={open ? 'split-button-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
-          aria-label='select merge strategy'
+          aria-label='generate-sequence-options'
           aria-haspopup='menu'
           variant='contained'
           color='secondary'
