@@ -45,15 +45,31 @@ function SequenceVisualizer({ selectedView, searchSequence }: SequenceVisualizer
         marginTop: '25px',
       }}
     >
+      {/*
+      TODO: Add enzymes
+      TODO: Add zoom
+      TODO: Add size
+      TODO: Add index
+      TODO: Add complement
+       */}
       <SeqViz
         key={`seqviz-${selectedView}-mode`}
         viewer={selectedView}
         search={{ query: searchSequence, mismatch: 0 }}
-        name='J23100'
+        name={randomSeq === null ? 'J23100' : 'Example Sequence'}
         seq={randomSeq === null ? 'TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC' : randomSeq}
         annotations={[
-          { name: 'promoter', start: 0, end: 34, direction: 1, color: colors.greenAccent[500] },
+          { start: 0, end: 22, name: 'Strong promoter', direction: 1 },
+          { start: 23, end: 273, name: 'GFP' },
+          { start: 300, end: 325, name: 'Weak promoter', direction: -1, color: '#FAA887' },
         ]}
+        translations={[{ start: 0, end: randomSeq ? randomSeq.length : 0, direction: 1 }]}
+        bpColors={{
+          A: colors.nucleotides.A,
+          C: colors.nucleotides.C,
+          G: colors.nucleotides.G,
+          T: colors.nucleotides.T,
+        }}
         style={{ height: '90%', width: '100%' }}
       />
 
