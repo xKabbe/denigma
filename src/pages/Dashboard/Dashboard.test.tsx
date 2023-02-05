@@ -7,7 +7,7 @@ import Dashboard from './Dashboard';
 
 describe('Dashboard', () => {
   test('should render Dashboard', () => {
-    render(<Dashboard />, { wrapper: BrowserRouter });
+    render(<Dashboard searchSequence='' />, { wrapper: BrowserRouter });
 
     // ViewTab
     const tab = screen.getByRole('tab', { name: 'both' });

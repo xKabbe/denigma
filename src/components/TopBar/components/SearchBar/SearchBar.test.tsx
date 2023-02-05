@@ -6,36 +6,26 @@ import { BrowserRouter } from 'react-router-dom';
 // Local imports
 import SearchBar from './SearchBar';
 
+const mockSetSearchSequence = jest.fn();
+
 describe('SearchBar', () => {
   test('should render SearchBar', async () => {
-    render(<SearchBar />, { wrapper: BrowserRouter });
+    render(<SearchBar searchSequence='' setSearchSequence={() => {}} />, { wrapper: BrowserRouter });
 
     const searchTextbox = screen.getByRole('textbox');
     expect(searchTextbox).toBeInTheDocument();
     expect(searchTextbox).toHaveAttribute('placeholder', 'Search');
-
-    const searchButton = screen.getByRole('button', { name: /search-button/i });
-    expect(searchButton).toBeInTheDocument();
   });
 
-  test('should click SearchBar button', async () => {
-    render(<SearchBar />, { wrapper: BrowserRouter });
+  test('should search provided input value', async () => {
+    render(<SearchBar searchSequence='' setSearchSequence={mockSetSearchSequence} />, {
+      wrapper: BrowserRouter,
+    });
 
-    const searchButton = screen.getByRole('button', { name: /search-button/i });
-    expect(searchButton).toBeInTheDocument();
+    const searchTextbox = screen.getByRole('textbox');
 
-    userEvent.click(searchButton);
-
-    const warningIcon = screen.getByTestId('ReportProblemOutlinedIcon');
-    expect(warningIcon).toBeInTheDocument();
-
-    const underConstructionTitle = screen.getByText('Under Construction...');
-    expect(underConstructionTitle).toBeInTheDocument();
-
-    const underConstructionTextPart1 = screen.getByText(/this components functionality is currently/i);
-    expect(underConstructionTextPart1).toBeInTheDocument();
-
-    const underConstructionTextPart2 = screen.getByText('Under Construction!');
-    expect(underConstructionTextPart2).toBeInTheDocument();
+    userEvent.type(searchTextbox, 'A');
+    expect(mockSetSearchSequence).toBeCalled();
+    expect(mockSetSearchSequence).toHaveBeenCalledWith('A');
   });
 });

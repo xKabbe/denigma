@@ -1,20 +1,22 @@
 // External imports
 import React from 'react';
-import { Box, IconButton, InputBase, useTheme } from '@mui/material';
+import { Box, InputAdornment, InputBase, useTheme } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 // Local imports
 import { tokens } from '../../../../themes/theme';
-import UnderConstructionSnackbar from '../../../UnderConstructionSnackbar/UnderConstructionSnackbar';
 
-function SearchBar() {
+interface SearchBarProps {
+  searchSequence: string;
+  setSearchSequence: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function SearchBar({ searchSequence, setSearchSequence }: SearchBarProps) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [open, setOpen] = React.useState(false);
 
-  const handleOnSearch = () => {
-    // TODO: Under Construction - Add functionality
-    setOpen(true);
+  const handleOnSearch = (search: string) => {
+    setSearchSequence(search);
   };
 
   return (
@@ -25,18 +27,17 @@ function SearchBar() {
         borderRadius: '3px',
       }}
     >
-      <InputBase sx={{ ml: 2, flex: 1 }} placeholder='Search' />
-      <IconButton
-        aria-label='search-button'
-        type='button'
-        sx={{ p: 1 }}
-        onClick={() => handleOnSearch()}
-      >
-        <SearchIcon />
-      </IconButton>
-
-      {/* TODO: Under Construction - Add functionality */}
-      <UnderConstructionSnackbar open={open} setOpen={setOpen} />
+      <InputBase
+        sx={{ ml: 2, flex: 1 }}
+        placeholder='Search'
+        value={searchSequence}
+        endAdornment={
+          <InputAdornment position='start'>
+            <SearchIcon />
+          </InputAdornment>
+        }
+        onChange={(event) => handleOnSearch(event.target.value)}
+      />
     </Box>
   );
 }

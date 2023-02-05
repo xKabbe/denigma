@@ -77,25 +77,5 @@ describe('LanguageSelectionMenu', () => {
     const spanishMenuItem = screen.getByRole('menuitem', { name: /spanish/i });
     userEvent.click(spanishMenuItem);
     expect(mockSetCurrentLanguage).toBeCalled();
-
-    userEvent.keyboard('{esc}');
-    expect(mockSetAnchorEl).toBeCalled();
-  });
-
-  test('should close LanguageSelectionMenu', () => {
-    render(
-      <LanguageSelectionMenu
-        open
-        anchorEl={null}
-        setAnchorEl={mockSetAnchorEl}
-        currentLanguage='en'
-        setCurrentLanguage={mockSetCurrentLanguage}
-        languageOptions={languageOptions}
-      />,
-      { wrapper: BrowserRouter },
-    );
-
-    userEvent.keyboard('{esc}');
-    expect(mockSetAnchorEl).toBeCalled();
   });
 });

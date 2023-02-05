@@ -7,14 +7,11 @@ import TopBar from './TopBar';
 
 describe('TopBar', () => {
   test('should render TopBar', () => {
-    render(<TopBar />, { wrapper: BrowserRouter });
+    render(<TopBar searchSequence='' setSearchSequence={() => {}} />, { wrapper: BrowserRouter });
 
     const searchTextbox = screen.getByRole('textbox');
     expect(searchTextbox).toBeInTheDocument();
     expect(searchTextbox).toHaveAttribute('placeholder', 'Search');
-
-    const searchButton = screen.getByRole('button', { name: /search-button/i });
-    expect(searchButton).toBeInTheDocument();
 
     const colorModeButton = screen.getByRole('button', { name: /color-mode-button/i });
     expect(colorModeButton).toBeInTheDocument();
