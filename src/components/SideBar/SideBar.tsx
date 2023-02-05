@@ -12,12 +12,17 @@ import SequenceSettings from './components/Settings/SequenceSettings/SequenceSet
 import EnzymeSettings from './components/Settings/EnzymeSettings/EnzymeSettings';
 import SideBarFooter from './components/SideBarFooter/SideBarFooter';
 
-function SideBar() {
+interface SideBarProps {
+  showComplement: boolean;
+  setShowComplement: React.Dispatch<React.SetStateAction<boolean>>;
+  showIndex: boolean;
+  setShowIndex: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+function SideBar({ showComplement, setShowComplement, showIndex, setShowIndex }: SideBarProps) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-  const [complementIsChecked, setComplementIsChecked] = useState<boolean>(true);
-  const [indexIsChecked, setIndexIsChecked] = useState<boolean>(true);
   // TODO: Enable option to add/remove enzymes by the user -> possibly new UI approach
   //       for enzyme buttons or there will be a limit of 5 to 10 enzymes
   const [enzymeIsSelected, setEnzymeIsSelected] = useState<Array<string>>([
@@ -52,10 +57,10 @@ function SideBar() {
               <ViewSettings />
               <Divider />
               <SequenceSettings
-                complementIsChecked={complementIsChecked}
-                setComplementIsChecked={setComplementIsChecked}
-                indexIsChecked={indexIsChecked}
-                setIndexIsChecked={setIndexIsChecked}
+                showComplement={showComplement}
+                setShowComplement={setShowComplement}
+                showIndex={showIndex}
+                setShowIndex={setShowIndex}
               />
               <Divider />
               <EnzymeSettings

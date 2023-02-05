@@ -10,4 +10,6 @@ export default {
   component: SideBar,
 } as ComponentMeta<typeof SideBar>;
 
-export const Default = () => <SideBar />;
+export const Default = () => (
+  <SideBar showComplement setShowComplement={() => {}} showIndex setShowIndex={() => {}} />
+);

@@ -7,7 +7,10 @@ import SideBar from './SideBar';
 
 describe('SideBar', () => {
   test('should render SideBar', () => {
-    const { getByTestId } = render(<SideBar />, { wrapper: BrowserRouter });
+    const { getByTestId } = render(
+      <SideBar showComplement setShowComplement={() => {}} showIndex setShowIndex={() => {}} />,
+      { wrapper: BrowserRouter },
+    );
 
     // SideBar Header
     const menuIcon = screen.getByTestId('MenuOutlinedIcon');
