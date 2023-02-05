@@ -15,14 +15,20 @@ const Template: ComponentStory<typeof SequenceVisualizer> = (args) => <SequenceV
 export const BothView = Template.bind({});
 BothView.args = {
   selectedView: 'both',
+  showComplement: true,
+  showIndex: true,
 };
 
 export const CircularView = Template.bind({});
 CircularView.args = {
   selectedView: 'circular',
+  showComplement: true,
+  showIndex: true,
 };
 
 export const LinearView = Template.bind({});
 LinearView.args = {
   selectedView: 'linear',
+  showComplement: true,
+  showIndex: true,
 };
