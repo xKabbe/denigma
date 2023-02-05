@@ -14,16 +14,16 @@ const Template: ComponentStory<typeof SequenceSettings> = (args) => <SequenceSet
 
 export const CheckedComplement = Template.bind({});
 CheckedComplement.args = {
-  complementIsChecked: true,
-  setComplementIsChecked: () => {},
-  indexIsChecked: false,
-  setIndexIsChecked: () => {},
+  showComplement: true,
+  setShowComplement: () => {},
+  showIndex: false,
+  setShowIndex: () => {},
 };
 
 export const CheckedIndex = Template.bind({});
 CheckedIndex.args = {
-  complementIsChecked: false,
-  setComplementIsChecked: () => {},
-  indexIsChecked: true,
-  setIndexIsChecked: () => {},
+  showComplement: false,
+  setShowComplement: () => {},
+  showIndex: true,
+  setShowIndex: () => {},
 };
