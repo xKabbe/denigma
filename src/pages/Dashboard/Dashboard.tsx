@@ -9,17 +9,24 @@ import FloatingActionDial from './FloatingActionDial/FloatingActionDial';
 
 interface DashboardProps {
   searchSequence: string;
+  showComplement: boolean;
+  showIndex: boolean;
 }
 
 type ViewModes = 'both' | 'circular' | 'linear' | 'both_flip' | undefined;
 
-function Dashboard({ searchSequence }: DashboardProps) {
+function Dashboard({ searchSequence, showComplement, showIndex }: DashboardProps) {
   const [selectedView, setSelectedView] = useState<ViewModes>('both');
 
   return (
     <Box style={{ height: '90%', width: '100%', paddingLeft: '20px', paddingRight: '20px' }}>
       <ViewTab selectedView={selectedView} setSelectedView={setSelectedView} />
-      <SequenceVisualizer selectedView={selectedView} searchSequence={searchSequence} />
+      <SequenceVisualizer
+        selectedView={selectedView}
+        searchSequence={searchSequence}
+        showComplement={showComplement}
+        showIndex={showIndex}
+      />
       <FloatingActionDial />
     </Box>
   );

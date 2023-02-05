@@ -6,17 +6,17 @@ import { BrowserRouter } from 'react-router-dom';
 // Local imports
 import SequenceSettings from './SequenceSettings';
 
-const mockSetComplementIsChecked = jest.fn();
-const mockSetIndexIsChecked = jest.fn();
+const mockSetShowComplement = jest.fn();
+const mockSetShowIndex = jest.fn();
 
 describe('SequenceSettings', () => {
   test('should render SequenceSettings heading', () => {
     render(
       <SequenceSettings
-        complementIsChecked
-        setComplementIsChecked={mockSetComplementIsChecked}
-        indexIsChecked
-        setIndexIsChecked={mockSetIndexIsChecked}
+        showComplement
+        setShowComplement={mockSetShowComplement}
+        showIndex
+        setShowIndex={mockSetShowIndex}
       />,
       { wrapper: BrowserRouter },
     );
@@ -28,10 +28,10 @@ describe('SequenceSettings', () => {
   test('should render checked SequenceSettings switches', () => {
     render(
       <SequenceSettings
-        complementIsChecked
-        setComplementIsChecked={mockSetComplementIsChecked}
-        indexIsChecked
-        setIndexIsChecked={mockSetIndexIsChecked}
+        showComplement
+        setShowComplement={mockSetShowComplement}
+        showIndex
+        setShowIndex={mockSetShowIndex}
       />,
       { wrapper: BrowserRouter },
     );
@@ -46,10 +46,10 @@ describe('SequenceSettings', () => {
   test('should click checked SequenceSettings switches', () => {
     render(
       <SequenceSettings
-        complementIsChecked
-        setComplementIsChecked={mockSetComplementIsChecked}
-        indexIsChecked
-        setIndexIsChecked={mockSetIndexIsChecked}
+        showComplement
+        setShowComplement={mockSetShowComplement}
+        showIndex
+        setShowIndex={mockSetShowIndex}
       />,
       { wrapper: BrowserRouter },
     );
@@ -59,23 +59,23 @@ describe('SequenceSettings', () => {
     expect(complementSwitch).toBeChecked();
 
     userEvent.click(complementSwitch);
-    expect(mockSetComplementIsChecked).toBeCalled();
+    expect(mockSetShowComplement).toBeCalled();
 
     const indexSwitch = screen.getByRole('checkbox', { name: /show index/i });
     expect(indexSwitch).toBeInTheDocument();
     expect(indexSwitch).toBeChecked();
 
     userEvent.click(indexSwitch);
-    expect(mockSetIndexIsChecked).toBeCalled();
+    expect(mockSetShowIndex).toBeCalled();
   });
 
   test('should click unchecked SequenceSettings switches', () => {
     render(
       <SequenceSettings
-        complementIsChecked={false}
-        setComplementIsChecked={mockSetComplementIsChecked}
-        indexIsChecked={false}
-        setIndexIsChecked={mockSetIndexIsChecked}
+        showComplement={false}
+        setShowComplement={mockSetShowComplement}
+        showIndex={false}
+        setShowIndex={mockSetShowIndex}
       />,
       { wrapper: BrowserRouter },
     );
@@ -85,13 +85,13 @@ describe('SequenceSettings', () => {
     expect(complementSwitch).not.toBeChecked();
 
     userEvent.click(complementSwitch);
-    expect(mockSetComplementIsChecked).toBeCalled();
+    expect(mockSetShowComplement).toBeCalled();
 
     const indexSwitch = screen.getByRole('checkbox', { name: /show index/i });
     expect(indexSwitch).toBeInTheDocument();
     expect(indexSwitch).not.toBeChecked();
 
     userEvent.click(indexSwitch);
-    expect(mockSetIndexIsChecked).toBeCalled();
+    expect(mockSetShowIndex).toBeCalled();
   });
 });

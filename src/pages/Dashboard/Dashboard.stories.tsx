@@ -10,4 +10,4 @@ export default {
   component: Dashboard,
 } as ComponentMeta<typeof Dashboard>;
 
-export const Default = () => <Dashboard searchSequence='' />;
+export const Default = () => <Dashboard searchSequence='' showComplement showIndex />;

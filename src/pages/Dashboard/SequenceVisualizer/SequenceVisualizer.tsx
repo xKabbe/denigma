@@ -10,9 +10,16 @@ import GenerateSequenceButton from './components/GenerateSequenceButton/Generate
 interface SequenceVisualizerProps {
   selectedView: 'both' | 'circular' | 'linear' | 'both_flip' | undefined;
   searchSequence: string;
+  showComplement: boolean;
+  showIndex: boolean;
 }
 
-function SequenceVisualizer({ selectedView, searchSequence }: SequenceVisualizerProps) {
+function SequenceVisualizer({
+  selectedView,
+  searchSequence,
+  showComplement,
+  showIndex,
+}: SequenceVisualizerProps) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [randomSeq, setRandomSeq] = useState<string | null>(null);
@@ -49,8 +56,6 @@ function SequenceVisualizer({ selectedView, searchSequence }: SequenceVisualizer
       TODO: Add enzymes
       TODO: Add zoom
       TODO: Add size
-      TODO: Add index
-      TODO: Add complement
        */}
       <SeqViz
         key={`seqviz-${selectedView}-mode`}
@@ -58,6 +63,8 @@ function SequenceVisualizer({ selectedView, searchSequence }: SequenceVisualizer
         search={{ query: searchSequence, mismatch: 0 }}
         name={randomSeq === null ? 'J23100' : 'Example Sequence'}
         seq={randomSeq === null ? 'TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC' : randomSeq}
+        showComplement={showComplement}
+        showIndex={showIndex}
         annotations={[
           { start: 0, end: 22, name: 'Strong promoter', direction: 1 },
           { start: 23, end: 273, name: 'GFP' },

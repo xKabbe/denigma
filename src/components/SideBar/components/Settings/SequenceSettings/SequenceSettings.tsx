@@ -6,24 +6,24 @@ import { Box, FormControlLabel, Switch } from '@mui/material';
 import SideBarTitle from '../../SideBarTitle/SideBarTitle';
 
 interface SequenceSettingsProps {
-  complementIsChecked: boolean;
-  setComplementIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
-  indexIsChecked: boolean;
-  setIndexIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
+  showComplement: boolean;
+  setShowComplement: React.Dispatch<React.SetStateAction<boolean>>;
+  showIndex: boolean;
+  setShowIndex: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function SequenceSettings({
-  complementIsChecked,
-  setComplementIsChecked,
-  indexIsChecked,
-  setIndexIsChecked,
+  showComplement,
+  setShowComplement,
+  showIndex,
+  setShowIndex,
 }: SequenceSettingsProps) {
   function handleComplementCheck(event: React.ChangeEvent<HTMLInputElement>) {
-    setComplementIsChecked(event.target.checked);
+    setShowComplement(event.target.checked);
   }
 
   function handleIndexCheck(event: React.ChangeEvent<HTMLInputElement>) {
-    setIndexIsChecked(event.target.checked);
+    setShowIndex(event.target.checked);
   }
 
   return (
@@ -34,7 +34,7 @@ function SequenceSettings({
           control={
             <Switch
               onChange={(event) => handleComplementCheck(event)}
-              checked={complementIsChecked}
+              checked={showComplement}
               color='secondary'
             />
           }
@@ -45,7 +45,7 @@ function SequenceSettings({
           control={
             <Switch
               onChange={(event) => handleIndexCheck(event)}
-              checked={indexIsChecked}
+              checked={showIndex}
               color='secondary'
             />
           }

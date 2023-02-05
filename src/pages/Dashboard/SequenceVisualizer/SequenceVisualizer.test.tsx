@@ -8,9 +8,10 @@ import SequenceVisualizer from './SequenceVisualizer';
 
 describe('SequenceVisualizer', () => {
   test('should render SequenceVisualizer', () => {
-    const { container } = render(<SequenceVisualizer selectedView='both' searchSequence='' />, {
-      wrapper: BrowserRouter,
-    });
+    const { container } = render(
+      <SequenceVisualizer selectedView='both' searchSequence='' showComplement showIndex />,
+      { wrapper: BrowserRouter },
+    );
 
     expect(container.getElementsByClassName('la-vz-seqviz').length).toBe(1);
 
@@ -24,9 +25,10 @@ describe('SequenceVisualizer', () => {
   });
 
   test('should render generate random sequence', () => {
-    const { container } = render(<SequenceVisualizer selectedView='both' searchSequence='' />, {
-      wrapper: BrowserRouter,
-    });
+    const { container } = render(
+      <SequenceVisualizer selectedView='both' searchSequence='' showComplement showIndex />,
+      { wrapper: BrowserRouter },
+    );
 
     expect(container.getElementsByClassName('la-vz-seqviz').length).toBe(1);
 
