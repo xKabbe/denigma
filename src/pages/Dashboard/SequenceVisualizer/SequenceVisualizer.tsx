@@ -12,6 +12,8 @@ interface SequenceVisualizerProps {
   searchSequence: string;
   showComplement: boolean;
   showIndex: boolean;
+  zoom: number;
+  size: number;
 }
 
 function SequenceVisualizer({
@@ -19,6 +21,8 @@ function SequenceVisualizer({
   searchSequence,
   showComplement,
   showIndex,
+  zoom,
+  size,
 }: SequenceVisualizerProps) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
