@@ -10,4 +10,4 @@ export default {
   component: ViewSettings,
 } as ComponentMeta<typeof ViewSettings>;
 
-export const Default = () => <ViewSettings />;
+export const Default = () => <ViewSettings zoom={50} setZoom={() => {}} size={50} setSize={() => {}} />;
