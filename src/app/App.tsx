@@ -18,8 +18,8 @@ function App() {
   const [showComplement, setShowComplement] = useState<boolean>(true);
   const [showIndex, setShowIndex] = useState<boolean>(true);
   // TODO: Create ViewSettings object (fewer parameters)
-  const [zoom, setZoom] = useState<number>(25);
-  const [size, setSize] = useState<number>(25);
+  const [zoom, setZoom] = useState<number>(50);
+  const [size, setSize] = useState<number>(1);
 
   const colorMode = useMemo(
     () => ({
