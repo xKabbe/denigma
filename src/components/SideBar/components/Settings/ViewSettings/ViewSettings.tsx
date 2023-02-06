@@ -29,7 +29,15 @@ function ViewSettings({ zoom, setZoom, size, setSize }: ViewSettingsProps) {
         <Slider aria-label='zoom' color='secondary' value={zoom} onChange={handleZoomChange} />
 
         <Typography gutterBottom>Size</Typography>
-        <Slider aria-label='size' color='secondary' value={size} onChange={handleSizeChange} />
+        <Slider
+          aria-label='size'
+          color='secondary'
+          value={size}
+          min={0.0}
+          max={1.0}
+          step={0.1}
+          onChange={handleSizeChange}
+        />
       </Box>
     </Box>
   );
