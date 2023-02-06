@@ -56,33 +56,40 @@ function SequenceVisualizer({
         marginTop: '25px',
       }}
     >
-      {/*
-      TODO: Add enzymes
-      TODO: Add zoom
-      TODO: Add size
-       */}
-      <SeqViz
-        key={`seqviz-${selectedView}-mode`}
-        viewer={selectedView}
-        search={{ query: searchSequence, mismatch: 0 }}
-        name={randomSeq === null ? 'J23100' : 'Example Sequence'}
-        seq={randomSeq === null ? 'TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC' : randomSeq}
-        showComplement={showComplement}
-        showIndex={showIndex}
-        annotations={[
-          { start: 0, end: 22, name: 'Strong promoter', direction: 1 },
-          { start: 23, end: 273, name: 'GFP' },
-          { start: 300, end: 325, name: 'Weak promoter', direction: -1, color: '#FAA887' },
-        ]}
-        translations={[{ start: 0, end: randomSeq ? randomSeq.length : 0, direction: 1 }]}
-        bpColors={{
-          A: colors.nucleotides.A,
-          C: colors.nucleotides.C,
-          G: colors.nucleotides.G,
-          T: colors.nucleotides.T,
+      <Box
+        style={{
+          height: `${90 * size}%`,
+          width: `${100 * size}%`,
+          marginTop: '25px',
         }}
-        style={{ height: '90%', width: '100%' }}
-      />
+      >
+        {/*
+      TODO: Add enzymes
+       */}
+        <SeqViz
+          key={`seqviz-${selectedView}-mode`}
+          viewer={selectedView}
+          search={{ query: searchSequence, mismatch: 0 }}
+          name={randomSeq === null ? 'J23100' : 'Example Sequence'}
+          seq={randomSeq === null ? 'TTGACGGCTAGCTCAGTCCTAGGTACAGTGCTAGC' : randomSeq}
+          zoom={{ linear: zoom }}
+          showComplement={showComplement}
+          showIndex={showIndex}
+          annotations={[
+            { start: 0, end: 22, name: 'Strong promoter', direction: 1 },
+            { start: 23, end: 273, name: 'GFP' },
+            { start: 300, end: 325, name: 'Weak promoter', direction: -1, color: '#FAA887' },
+          ]}
+          translations={[{ start: 0, end: randomSeq ? randomSeq.length : 0, direction: 1 }]}
+          bpColors={{
+            A: colors.nucleotides.A,
+            C: colors.nucleotides.C,
+            G: colors.nucleotides.G,
+            T: colors.nucleotides.T,
+          }}
+          style={{ height: '90%', width: '100%' }}
+        />
+      </Box>
 
       <GenerateSequenceButton width='250px' randomSequenceGenerator={randomSequenceGenerator} />
     </Box>
