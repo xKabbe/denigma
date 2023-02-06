@@ -10,7 +10,7 @@ const mockSetSize = jest.fn();
 
 describe('ViewSettings', () => {
   test('should render ViewSettings heading', () => {
-    render(<ViewSettings zoom={50} setZoom={() => {}} size={50} setSize={() => {}} />, {
+    render(<ViewSettings zoom={50} setZoom={() => {}} size={1} setSize={() => {}} />, {
       wrapper: BrowserRouter,
     });
 
@@ -25,7 +25,7 @@ describe('ViewSettings', () => {
   });
 
   test('should render ViewSettings slider', () => {
-    render(<ViewSettings zoom={50} setZoom={() => {}} size={50} setSize={() => {}} />, {
+    render(<ViewSettings zoom={50} setZoom={() => {}} size={1} setSize={() => {}} />, {
       wrapper: BrowserRouter,
     });
 
@@ -54,9 +54,9 @@ describe('ViewSettings', () => {
     expect(sizeSlider).toBeInTheDocument();
     expect(sizeSlider).toHaveDisplayValue(['0']);
 
-    fireEvent.change(sizeSlider, { target: { value: 85 } });
+    fireEvent.change(sizeSlider, { target: { value: 0.5 } });
     expect(mockSetSize).toBeCalled();
     // TODO: Fix this
-    // expect(zoomSlider).toHaveDisplayValue('99');
+    // expect(zoomSlider).toHaveDisplayValue('0.5');
   });
 });
