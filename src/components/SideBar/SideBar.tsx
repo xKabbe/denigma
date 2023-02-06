@@ -17,9 +17,22 @@ interface SideBarProps {
   setShowComplement: React.Dispatch<React.SetStateAction<boolean>>;
   showIndex: boolean;
   setShowIndex: React.Dispatch<React.SetStateAction<boolean>>;
+  zoom: number;
+  setZoom: React.Dispatch<React.SetStateAction<number>>;
+  size: number;
+  setSize: React.Dispatch<React.SetStateAction<number>>;
 }
 
-function SideBar({ showComplement, setShowComplement, showIndex, setShowIndex }: SideBarProps) {
+function SideBar({
+  showComplement,
+  setShowComplement,
+  showIndex,
+  setShowIndex,
+  zoom,
+  setZoom,
+  size,
+  setSize,
+}: SideBarProps) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
@@ -54,7 +67,7 @@ function SideBar({ showComplement, setShowComplement, showIndex, setShowIndex }:
 
           {!isCollapsed && (
             <Box paddingLeft='5%' paddingRight='5%'>
-              <ViewSettings />
+              <ViewSettings zoom={zoom} setZoom={setZoom} size={size} setSize={setSize} />
               <Divider />
               <SequenceSettings
                 showComplement={showComplement}

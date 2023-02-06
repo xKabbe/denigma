@@ -11,5 +11,14 @@ export default {
 } as ComponentMeta<typeof SideBar>;
 
 export const Default = () => (
-  <SideBar showComplement setShowComplement={() => {}} showIndex setShowIndex={() => {}} />
+  <SideBar
+    showComplement
+    setShowComplement={() => {}}
+    showIndex
+    setShowIndex={() => {}}
+    zoom={50}
+    setZoom={() => {}}
+    size={50}
+    setSize={() => {}}
+  />
 );
