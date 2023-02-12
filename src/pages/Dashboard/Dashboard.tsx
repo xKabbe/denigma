@@ -11,11 +11,13 @@ interface DashboardProps {
   searchSequence: string;
   showComplement: boolean;
   showIndex: boolean;
+  zoom: number;
+  size: number;
 }
 
 type ViewModes = 'both' | 'circular' | 'linear' | 'both_flip' | undefined;
 
-function Dashboard({ searchSequence, showComplement, showIndex }: DashboardProps) {
+function Dashboard({ searchSequence, showComplement, showIndex, zoom, size }: DashboardProps) {
   const [selectedView, setSelectedView] = useState<ViewModes>('both');
 
   return (
@@ -26,6 +28,8 @@ function Dashboard({ searchSequence, showComplement, showIndex }: DashboardProps
         searchSequence={searchSequence}
         showComplement={showComplement}
         showIndex={showIndex}
+        zoom={zoom}
+        size={size}
       />
       <FloatingActionDial />
     </Box>

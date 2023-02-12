@@ -14,8 +14,12 @@ import { ColorContext, themeSettings } from '../themes/theme';
 function App() {
   const [mode, setMode] = useState<PaletteMode>('dark');
   const [searchSequence, setSearchSequence] = useState<string>('');
+  // TODO: Create SequenceSettings object (fewer parameters)
   const [showComplement, setShowComplement] = useState<boolean>(true);
   const [showIndex, setShowIndex] = useState<boolean>(true);
+  // TODO: Create ViewSettings object (fewer parameters)
+  const [zoom, setZoom] = useState<number>(50);
+  const [size, setSize] = useState<number>(1);
 
   const colorMode = useMemo(
     () => ({
@@ -38,6 +42,10 @@ function App() {
             setShowComplement={setShowComplement}
             showIndex={showIndex}
             setShowIndex={setShowIndex}
+            zoom={zoom}
+            setZoom={setZoom}
+            size={size}
+            setSize={setSize}
           />
           <main className='content'>
             <TopBar searchSequence={searchSequence} setSearchSequence={setSearchSequence} />
@@ -49,6 +57,8 @@ function App() {
                     searchSequence={searchSequence}
                     showComplement={showComplement}
                     showIndex={showIndex}
+                    zoom={zoom}
+                    size={size}
                   />
                 }
               />
@@ -59,6 +69,8 @@ function App() {
                     searchSequence={searchSequence}
                     showComplement={showComplement}
                     showIndex={showIndex}
+                    zoom={zoom}
+                    size={size}
                   />
                 }
               />

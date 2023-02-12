@@ -17,6 +17,8 @@ BothView.args = {
   selectedView: 'both',
   showComplement: true,
   showIndex: true,
+  zoom: 50,
+  size: 50,
 };
 
 export const CircularView = Template.bind({});
@@ -24,6 +26,8 @@ CircularView.args = {
   selectedView: 'circular',
   showComplement: true,
   showIndex: true,
+  zoom: 50,
+  size: 50,
 };
 
 export const LinearView = Template.bind({});
@@ -31,4 +35,6 @@ LinearView.args = {
   selectedView: 'linear',
   showComplement: true,
   showIndex: true,
+  zoom: 50,
+  size: 50,
 };

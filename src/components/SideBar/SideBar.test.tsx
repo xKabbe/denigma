@@ -8,7 +8,16 @@ import SideBar from './SideBar';
 describe('SideBar', () => {
   test('should render SideBar', () => {
     const { getByTestId } = render(
-      <SideBar showComplement setShowComplement={() => {}} showIndex setShowIndex={() => {}} />,
+      <SideBar
+        showComplement
+        setShowComplement={() => {}}
+        showIndex
+        setShowIndex={() => {}}
+        zoom={50}
+        setZoom={() => {}}
+        size={50}
+        setSize={() => {}}
+      />,
       { wrapper: BrowserRouter },
     );
 

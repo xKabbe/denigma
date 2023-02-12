@@ -9,7 +9,14 @@ import SequenceVisualizer from './SequenceVisualizer';
 describe('SequenceVisualizer', () => {
   test('should render SequenceVisualizer', () => {
     const { container } = render(
-      <SequenceVisualizer selectedView='both' searchSequence='' showComplement showIndex />,
+      <SequenceVisualizer
+        selectedView='both'
+        searchSequence=''
+        showComplement
+        showIndex
+        zoom={50}
+        size={50}
+      />,
       { wrapper: BrowserRouter },
     );
 
@@ -26,7 +33,14 @@ describe('SequenceVisualizer', () => {
 
   test('should render generate random sequence', () => {
     const { container } = render(
-      <SequenceVisualizer selectedView='both' searchSequence='' showComplement showIndex />,
+      <SequenceVisualizer
+        selectedView='both'
+        searchSequence=''
+        showComplement
+        showIndex
+        zoom={50}
+        size={50}
+      />,
       { wrapper: BrowserRouter },
     );
 

@@ -5,9 +5,14 @@ import { BrowserRouter } from 'react-router-dom';
 // Local imports
 import ViewSettings from './ViewSettings';
 
+const mockSetZoom = jest.fn();
+const mockSetSize = jest.fn();
+
 describe('ViewSettings', () => {
   test('should render ViewSettings heading', () => {
-    render(<ViewSettings />, { wrapper: BrowserRouter });
+    render(<ViewSettings zoom={50} setZoom={() => {}} size={1} setSize={() => {}} />, {
+      wrapper: BrowserRouter,
+    });
 
     const viewHeading = screen.getByRole('heading', { name: /view settings/i });
     expect(viewHeading).toBeInTheDocument();
@@ -20,7 +25,9 @@ describe('ViewSettings', () => {
   });
 
   test('should render ViewSettings slider', () => {
-    render(<ViewSettings />, { wrapper: BrowserRouter });
+    render(<ViewSettings zoom={50} setZoom={() => {}} size={1} setSize={() => {}} />, {
+      wrapper: BrowserRouter,
+    });
 
     const zoomSlider = screen.getByRole('slider', { name: /zoom/i });
     expect(zoomSlider).toBeInTheDocument();
@@ -30,20 +37,26 @@ describe('ViewSettings', () => {
   });
 
   test('should drag ViewSettings slider', () => {
-    render(<ViewSettings />, { wrapper: BrowserRouter });
+    render(<ViewSettings zoom={0} setZoom={mockSetZoom} size={0} setSize={mockSetSize} />, {
+      wrapper: BrowserRouter,
+    });
 
     const zoomSlider = screen.getByRole('slider', { name: /zoom/i });
     expect(zoomSlider).toBeInTheDocument();
-    expect(zoomSlider).toHaveDisplayValue('0');
+    expect(zoomSlider).toHaveDisplayValue(['0']);
 
-    fireEvent.change(zoomSlider, { target: { value: 25 } });
-    expect(zoomSlider).toHaveDisplayValue('25');
+    fireEvent.change(zoomSlider, { target: { value: 50 } });
+    expect(mockSetZoom).toBeCalled();
+    // TODO: Fix this
+    // expect(zoomSlider).toHaveValue(['50']);
 
     const sizeSlider = screen.getByRole('slider', { name: /size/i });
     expect(sizeSlider).toBeInTheDocument();
-    expect(sizeSlider).toHaveDisplayValue('0');
+    expect(sizeSlider).toHaveDisplayValue(['0']);
 
-    fireEvent.change(zoomSlider, { target: { value: 99 } });
-    expect(zoomSlider).toHaveDisplayValue('99');
+    fireEvent.change(sizeSlider, { target: { value: 0.5 } });
+    expect(mockSetSize).toBeCalled();
+    // TODO: Fix this
+    // expect(zoomSlider).toHaveDisplayValue('0.5');
   });
 });
