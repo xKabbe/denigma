@@ -42,7 +42,7 @@ function SideBarFooter({ isCollapsed }: SideBarFooterProps) {
       ) : (
         <StyledSidebarFooter
           data-testid='expanded-sidebar-footer'
-          style={{ width: '50%', padding: '20px', borderRadius: '8px' }}
+          style={{ width: '50%', height: '125px', padding: '20px', borderRadius: '8px' }}
           onClick={() => window.open(codeUrl, '_blank')}
         >
           <div style={{ marginBottom: '10px' }}>
