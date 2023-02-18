@@ -38,18 +38,7 @@ function SideBar({
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
   // TODO: Enable option to add/remove enzymes by the user -> possibly new UI approach
   //       for enzyme buttons or there will be a limit of 5 to 10 enzymes
-  const [enzymeIsSelected, setEnzymeIsSelected] = useState<Array<string>>([
-    'PSTI',
-    'ECORI',
-    'XBAI',
-    'SPEI',
-    'ECORV',
-    'BAMHI',
-    'HINDIII',
-    'HAEIII',
-    'NDEI',
-    'SACI',
-  ]);
+  const [enzymeIsSelected, setEnzymeIsSelected] = useState<Array<string>>([]);
 
   return (
     <Box
